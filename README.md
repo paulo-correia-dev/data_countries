@@ -1,5 +1,5 @@
 # data_countries
-This repository contains a program that consumes an API that returns data countries.
+This repository contains a python program that consumes an API that returns data countries.
 
 # Steps to run the program:
 1 - Clone this git repository or download it.
