@@ -4,7 +4,7 @@ import openpyxl
 import requests
 from openpyxl.styles import Alignment, Font
 
-logging.basicConfig(filename='program.log', level=logging.INFO, format="%(levelname)s \ %(filename)s \ %(lineno)i \ %(message)s")
+logging.basicConfig(filename='program.log', level=logging.INFO, format="%(asctime)s \ %(levelname)s \ %(filename)s \ %(lineno)i \ %(message)s")
 
 logging.info('The program imported the libraries.')
 
@@ -12,7 +12,7 @@ url = 'https://restcountries.com/v2/all'
 response = requests.get(url=url)
 response = json.loads(response.content)
 
-logging.info('The program has been connected to API.')
+logging.info('The program successfully made a get request to the API.')
 
 book = openpyxl.Workbook()
 book.create_sheet('Pag 1')
@@ -62,3 +62,4 @@ for e, c in enumerate(response):
 logging.info('The program stored the API results in xlsx archive.')
 
 book.save('Countries List.xlsx')
+logging.info('File generated successfully.')
