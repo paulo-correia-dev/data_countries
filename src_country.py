@@ -1,16 +1,25 @@
+import logging
 import json
 import openpyxl
 import requests
 from openpyxl.styles import Alignment, Font
 
+logging.basicConfig(filename='program.log', level=logging.INFO, format="%(levelname)s \ %(filename)s \ %(lineno)i \ %(message)s")
+
+logging.info('The program imported the libraries.')
+
 url = 'https://restcountries.com/v2/all'
 response = requests.get(url=url)
 response = json.loads(response.content)
+
+logging.info('The program has been connected to API.')
 
 book = openpyxl.Workbook()
 book.create_sheet('Pag 1')
 pag1 = book['Pag 1']
 del book['Sheet']
+
+logging.info('The program created the book and sheet of arquive xlsx.')
 
 pag1.append(['Countries List'])
 pag1.merge_cells('A1:D1')
@@ -25,7 +34,7 @@ fontStyle = Font(size="12", bold=True, color="808080")
 for rows in pag1.iter_rows(min_row=2, max_row=2):
     for e, cell in enumerate(rows):
         value_str_cell = str(cell.value)
-        pag1.cell(row=2, column=e+1, value=value_str_cell).font = fontStyle
+        pag1.cell(row=2, column=e + 1, value=value_str_cell).font = fontStyle
 a = 3
 for e, c in enumerate(response):
     var = response[e].get('capital', '-')
@@ -47,6 +56,9 @@ for e, c in enumerate(response):
 
     pag1.append([c['name'], var, varArea, varCurrencies])
 
-    pag1['C'+str(a)].number_format = '##0,00.00'
+    pag1['C' + str(a)].number_format = '##0,00.00'
     a += 1
+
+logging.info('The program stored the API results in xlsx archive.')
+
 book.save('Countries List.xlsx')
