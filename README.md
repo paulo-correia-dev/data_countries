@@ -1,5 +1,5 @@
 # data_countries
-This repository contains a python program that consumes an API that returns country data in a ".xlsx" file.
+This repository contains a python program that consumes an API that returns data countries in a ".xlsx" file.
 
 # Steps to run the program in Windows:
 1 - Clone this git repository or download it.  
