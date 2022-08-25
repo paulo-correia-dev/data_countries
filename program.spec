@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['C:\\Desenvolvimento\\coutries_api\\program.log'],
+    ['program.log'],
     pathex=[],
     binaries=[],
     datas=[],

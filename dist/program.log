@@ -1,5 +1,0 @@
-2022-08-24 16:56:06,043 \ INFO \ src_country.py \ 9 \ The program imported the libraries.
-2022-08-24 16:56:06,827 \ INFO \ src_country.py \ 15 \ The program successfully made a get request to the API.
-2022-08-24 16:56:06,830 \ INFO \ src_country.py \ 22 \ The program created the book and sheet of arquive xlsx.
-2022-08-24 16:56:06,841 \ INFO \ src_country.py \ 62 \ The program stored the API results in xlsx archive.
-2022-08-24 16:56:06,873 \ INFO \ src_country.py \ 65 \ File generated successfully.
