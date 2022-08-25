@@ -1,7 +1,6 @@
 import logging
 import json
 import sys
-
 import openpyxl
 import requests
 from openpyxl.styles import Alignment, Font
@@ -12,13 +11,11 @@ try:
     url = 'https://restcountries.com/v2/all'
     response = requests.get(url=url)
     response = json.loads(response.content)
-    logging.info('Conexão à API estabelecida com sucesso.')
+    logging.info('API connection successfully established.')
 except:
-    print('Conexão à API [NÃO] estabelecida.')
-    logging.error('Conexão à API [NÃO] estabelecida.')
+    print('Conexão com a API não estabelecida.')
+    logging.error('A connection to the API could not be established.')
     sys.exit()
-
-# logging.info('The program successfully made a get request to the API.')
 
 try:
     book = openpyxl.Workbook()
@@ -68,16 +65,14 @@ try:
 
         pag1['C' + str(a)].number_format = '##0,00.00'
         a += 1
+    logging.info('The program handled the fields without information.')
+    logging.info('The program stored the API results in xlsx archive.')
 except:
-    logging.info('Houve um erro na criação do arquivo.')
-    print('Houve um erro na criação do arquivo.')
+    logging.info('There was an error creating the file.')
     sys.exit()
-# logging.info('The program handled the fields without information.')
-# logging.info('The program stored the API results in xlsx archive.')
 
 try:
     book.save('Countries List.xlsx')
     logging.info('File generated successfully.')
 except:
-    logging.error('Erro de gravação do arquivo.')
-    print('Erro de gravação do arquivo.')
+    logging.error('Error writing file.')
