@@ -1,0 +1,6 @@
+2022-08-24 22:57:27,437 \ INFO \ src_country.py \ 14 \ API connection successfully established.
+2022-08-24 22:57:27,439 \ INFO \ src_country.py \ 26 \ The program created the book and sheet of arquive xlsx.
+2022-08-24 22:57:27,439 \ INFO \ src_country.py \ 43 \ The program defined the fields and formatting of the table.
+2022-08-24 22:57:27,446 \ INFO \ src_country.py \ 68 \ The program handled the fields without information.
+2022-08-24 22:57:27,446 \ INFO \ src_country.py \ 69 \ The program stored the API results in xlsx archive.
+2022-08-24 22:57:27,481 \ INFO \ src_country.py \ 76 \ File generated successfully.
